@@ -5,9 +5,9 @@
     "size": 1527148
   },
   "app": {
-    "version": "1.2.1",
-    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1813/VSTHost-Control-1.2.1-Windows-Setup.exe",
-    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1813/VSTHost-Control-1.2.1-macOS.pkg",
-    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261113.1813"
+    "version": "1.2.2",
+    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1836/VSTHost-Control-1.2.2-Windows-Setup.exe",
+    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1836/VSTHost-Control-1.2.2-macOS.pkg",
+    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261113.1836"
   }
 }
