@@ -1,8 +1,8 @@
 {
   "unit": {
-    "release": "20261113.1813",
-    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1813/vsthost-update-20261113.1813.vsu",
-    "size": 1526474
+    "release": "20261113.1836",
+    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1836/vsthost-update-20261113.1836.vsu",
+    "size": 1527148
   },
   "app": {
     "version": "1.2.1",
