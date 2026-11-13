@@ -1,0 +1,13 @@
+{
+  "unit": {
+    "release": "20261113.1609",
+    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1609/vsthost-update-20261113.1609.vsu",
+    "size": 1525898
+  },
+  "app": {
+    "version": "1.2.0",
+    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1609/VSTHost-Control-1.2.0-Windows-Setup.exe",
+    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261113.1609/VSTHost-Control-1.2.0-macOS.pkg",
+    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261113.1609"
+  }
+}
