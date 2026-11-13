@@ -1,0 +1,54 @@
+wineusb.sys: handle URB_FUNCTION_VENDOR_ENDPOINT (backport from Wine 11 to Debian's 10.0~repack-6).
+
+PACE's iLokDrvr.sys sends its iLok commands (IOCTL 0x84592000) as vendor control transfers to an endpoint
+recipient. Wine 10 answers them STATUS_NOT_IMPLEMENTED ("Unhandled function 0x19"), so the licence service never
+sees the key. Wine 11 handles them the same way as the device and interface recipients; this is that change only.
+
+--- a/dlls/wineusb.sys/wineusb.c
++++ b/dlls/wineusb.sys/wineusb.c
+@@ -558,6 +558,7 @@
+         case URB_FUNCTION_SELECT_CONFIGURATION:
+         case URB_FUNCTION_VENDOR_DEVICE:
+         case URB_FUNCTION_VENDOR_INTERFACE:
++        case URB_FUNCTION_VENDOR_ENDPOINT:
+         {
+             struct usb_submit_urb_params params =
+             {
+@@ -589,6 +590,7 @@
+
+                 case URB_FUNCTION_VENDOR_DEVICE:
+                 case URB_FUNCTION_VENDOR_INTERFACE:
++                case URB_FUNCTION_VENDOR_ENDPOINT:
+                 {
+                     struct _URB_CONTROL_VENDOR_OR_CLASS_REQUEST *req = &urb->UrbControlVendorClassRequest;
+                     if (req->TransferBufferMDL)
+--- a/dlls/wineusb.sys/unixlib.c
++++ b/dlls/wineusb.sys/unixlib.c
+@@ -364,6 +364,7 @@
+
+             case URB_FUNCTION_VENDOR_DEVICE:
+             case URB_FUNCTION_VENDOR_INTERFACE:
++            case URB_FUNCTION_VENDOR_ENDPOINT:
+             {
+                 struct _URB_CONTROL_VENDOR_OR_CLASS_REQUEST *req = &urb->UrbControlVendorClassRequest;
+                 req->TransferBufferLength = transfer->actual_length;
+@@ -542,6 +543,7 @@
+
+         case URB_FUNCTION_VENDOR_DEVICE:
+         case URB_FUNCTION_VENDOR_INTERFACE:
++        case URB_FUNCTION_VENDOR_ENDPOINT:
+         {
+             struct _URB_CONTROL_VENDOR_OR_CLASS_REQUEST *req = &urb->UrbControlVendorClassRequest;
+             uint8_t req_type = LIBUSB_REQUEST_TYPE_VENDOR;
+@@ -555,8 +557,10 @@
+
+             if (urb->UrbHeader.Function == URB_FUNCTION_VENDOR_DEVICE)
+                 req_type |= LIBUSB_RECIPIENT_DEVICE;
+-            else
++            else if (urb->UrbHeader.Function == URB_FUNCTION_VENDOR_INTERFACE)
+                 req_type |= LIBUSB_RECIPIENT_INTERFACE;
++            else
++                req_type |= LIBUSB_RECIPIENT_ENDPOINT;
+
+             if (req->TransferFlags & USBD_TRANSFER_DIRECTION_IN)
+                 req_type |= LIBUSB_ENDPOINT_IN;
