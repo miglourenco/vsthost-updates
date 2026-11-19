@@ -1,13 +1,13 @@
 {
   "unit": {
-    "release": "20261114.0014",
-    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261114.0014/vsthost-update-20261114.0014.vsu",
-    "size": 1533592
+    "release": "20261119.1236",
+    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1236/vsthost-update-20261119.1236.vsu",
+    "size": 1535740
   },
   "app": {
-    "version": "1.2.6",
-    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261114.0014/VSTHost-Control-1.2.6-Windows-Setup.exe",
-    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261114.0014/VSTHost-Control-1.2.6-macOS.pkg",
-    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261114.0014"
+    "version": "1.2.7",
+    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1236/VSTHost-Control-1.2.7-Windows-Setup.exe",
+    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1236/VSTHost-Control-1.2.7-macOS.pkg",
+    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261119.1236"
   }
 }
