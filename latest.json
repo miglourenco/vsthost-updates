@@ -1,13 +1,15 @@
 {
   "unit": {
-    "release": "20261119.1527",
-    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1527/vsthost-update-20261119.1527.vsu",
-    "size": 1535514
+    "release": "20261124.2002",
+    "url": "https://github.com/miglourenco/vsthost-updates/releases/download/20261124.2002/vsthost-update-20261124.2002.vsu",
+    "size": 1558642,
+    "notes": "Sessions follow the LV1 session by its name - needs the Companion Surface driver 0.1.28 or newer in eMotion LV1\nA % in a session name follows many LV1 sessions: Tour_% follows Tour_Lisbon, Tour_v2...\nLoading a session no longer leaves the previous one's names and settings on unused channels\nAutosave can be turned off (SESSIONS)\nRestart the engine comes back on the session it was on\nSessions can be exported to and imported from your computer"
   },
   "app": {
-    "version": "1.2.8",
-    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1527/VSTHost-Control-1.2.8-Windows-Setup.exe",
-    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261119.1527/VSTHost-Control-1.2.8-macOS.pkg",
-    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261119.1527"
+    "version": "1.2.9",
+    "windows": "https://github.com/miglourenco/vsthost-updates/releases/download/20261124.2002/VSTHost-Control-1.2.9-Windows-Setup.exe",
+    "mac": "https://github.com/miglourenco/vsthost-updates/releases/download/20261124.2002/VSTHost-Control-1.2.9-macOS.pkg",
+    "page": "https://github.com/miglourenco/vsthost-updates/releases/tag/20261124.2002",
+    "notes": "SETUP - SOFTWARE: the unit and the app side by side, one button to update each, and this window when updates are found\nNew SNAPSHOTS and SESSIONS tabs\nSETUP - LATENCY explains TX LATE and sets the L that fixes it\nRestart the engine button in SETUP - UNIT"
   }
 }
